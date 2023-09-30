@@ -98,6 +98,7 @@
     border-radius: 4px;
     color: #ffffffb9;
     cursor: pointer;
+    transition: all 0.5s;
   }
   .btn-follow {
     text-transform: capitalize;
