@@ -22,19 +22,26 @@ const Cards = function(props){
             return courses[category];
         }
     }
-
+    let output = getCourses();
     return(
-        <div className="flex flex-wrap justify-center gap-4 mb-4">
+        <div>
             {
-                getCourses().map((course)=>(
-                    <Card key={course.id}
-                        course={course}
-                        likedCourses={likedCourses}
-                        setLikedCourses={setLikedCourses}
-                    />
-                ))
+                (output.length === 0) ?
+                <div><p className="text-lg">No Courses Found</p></div>:
+                <div className="flex flex-wrap justify-center gap-4 mb-4">
+                    {
+                        getCourses().map((course)=>(
+                            <Card key={course.id}
+                                course={course}
+                                likedCourses={likedCourses}
+                                setLikedCourses={setLikedCourses}
+                            />
+                        ))
+                    }
+                </div>
             }
         </div>
+        
     )
 }
 
